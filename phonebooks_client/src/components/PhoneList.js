@@ -22,7 +22,7 @@ export default function PhoneList() {
 
     return (
         <div className="mainList" id="main-data">
-            {phonebook.map((user) => (
+            {!!phonebook && phonebook.length > 0 && phonebook.map((user) => (
                 <PhoneItem key={user.id} user={user} />
             ))}
         </div>
