@@ -14,3 +14,11 @@ export const loadPhonebooks = createAsyncThunk(
         return data;
     }
 );
+
+export const loadPage = createAsyncThunk(
+    'contacts/loadPage',
+    async () => {
+        const { data } = await req.get('phonebooks');
+        return data;
+    }
+)
