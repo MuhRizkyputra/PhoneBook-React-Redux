@@ -34,13 +34,13 @@ const ButtonAdd = () => {
     )
 }
 
-export default function PhoneBar({ sort, setSort, keyword, setKeyword, setPage }) {
+export default function SearchBar({ sort, setSort, keyword, setKeyword, setPage }) {
     const handelSearch = (event) => {
         const { value } = event.target
         setKeyword(value)
     }
     return (
-        <div className="container-phonebar">
+        <div className="container-seachbar">
             <div className="container-form">
                 {sort === 'asc' || sort.sort == 'asc' ? <ButtonSortAsc sort={sort} setSort={setSort} setPage={setPage}/> : <ButtonSortDesc sort={sort
                 } setSort={setSort} setPage={setPage}/>}
