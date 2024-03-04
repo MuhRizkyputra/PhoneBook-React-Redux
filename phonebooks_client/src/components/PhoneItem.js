@@ -4,27 +4,35 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import { deletePhonebooks, updateAvatar, updatePhonebooks } from "../reducers/API";
+import { useDispatch } from "react-redux";
 
-export default function PhoneItem({ user, UpdateData, Delete }) {
-
-    const submit = (user) => {
-        confirmAlert({
-          title: 'KONFIRMASI UNTUK HAPUS',
-          message: `Apakah anda yakin menghapus data ini '${user.name}'`,
-          buttons: [
-            {
-              label: 'Ya',
-              onClick: () => Delete(user.id)
-            },
-            {
-              label: 'Tidak',
-            }
-          ]
-        });
-      };
+export default function PhoneItem({ user }) {
 
     const [edit, setEdit] = useState(false)
     const [newData, setNewData] = useState({ name: user.name, phone: user.phone })
+    const dispatch = useDispatch()
+
+    const UpdateData=(id, contact) => {
+        dispatch(updatePhonebooks({id,contact}))
+        setEdit(false)
+    }
+
+    const submit = (user) => {
+        confirmAlert({
+            title: 'KONFIRMASI UNTUK HAPUS',
+            message: `Apakah anda yakin menghapus data ini '${user.name}'`,
+            buttons: [
+                {
+                    label: 'Ya',
+                    onClick: () => dispatch(deletePhonebooks({ id: user.id }))
+                },
+                {
+                    label: 'Tidak',
+                }
+            ]
+        });
+    };
 
     if (edit) {
         return (
@@ -72,8 +80,8 @@ export default function PhoneItem({ user, UpdateData, Delete }) {
                             <p>{user.phone}</p>
                         </div>
                         <div className="btn-item">
-                            <button  onClick={() => { setEdit(true) }}>
-                                <FontAwesomeIcon icon={faPenToSquare}  />
+                            <button  >
+                                <FontAwesomeIcon icon={faPenToSquare} onClick={() => { setEdit(true) }} />
                             </button>
                             <button onClick={() => submit(user)}>
                                 <FontAwesomeIcon icon={faTrashCan} />
