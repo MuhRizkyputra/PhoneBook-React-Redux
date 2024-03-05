@@ -1,30 +1,20 @@
-import axios from "axios"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
+import { addPhonebooks } from "../reducers/API"
 
 
-export default function FormAdd({ user, setUser, item, setItem, sort, setSort }) {
-    let navigate = useNavigate()
+export default function FormAdd() {
+    const [user, setUser] = useState({ name: '', phone: '' })
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const addData = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/api/phonebooks', {
-            ...user
-        }).then((response) => {
-            setItem((item) => {
-                return [
-                    ...item.filter(data => data.id !== response.data.id),
-                    {
-                        id: response.data.id,
-                        name: response.data.name,
-                        phone: response.data.phone
-                    }
-                ]
-            })
-            navigate('/')
-        }).catch((err) => {
-            console.log('ini err add data', err)
-        })
+        dispatch(addPhonebooks(user))
+        navigate('/')
     }
+
     return (
         <form onSubmit={addData}>
             <div className="container-form-add">
@@ -33,7 +23,7 @@ export default function FormAdd({ user, setUser, item, setItem, sort, setSort })
                     <input type="text" placeholder="add your phone" onChange={(e) => setUser({ ...user, phone: e.target.value })} required />
                 </div>
                 <div className="btn-form-add">
-                    <button className='btn-btnSave' type='submit'> Save </button>
+                    <button type="submit"> Save </button>
                     <Link to={'/'}>Cancel</Link>
                 </div>
 
