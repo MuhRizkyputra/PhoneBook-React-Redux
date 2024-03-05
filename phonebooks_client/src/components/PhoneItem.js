@@ -2,9 +2,9 @@ import { faArrowRotateLeft, faFloppyDisk, faPenToSquare, faTrashCan } from "@for
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import { deletePhonebooks, updateAvatar, updatePhonebooks } from "../reducers/API";
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { deletePhonebooks, updatePhonebooks } from "../reducers/API";
 import { useDispatch } from "react-redux";
 
 export default function PhoneItem({ user }) {
@@ -13,7 +13,7 @@ export default function PhoneItem({ user }) {
     const [newData, setNewData] = useState({ name: user.name, phone: user.phone })
     const dispatch = useDispatch()
 
-    const UpdateData=(id, contact) => {
+    const updateData=(id, contact) => {
         dispatch(updatePhonebooks({id,contact}))
         setEdit(false)
     }
@@ -51,7 +51,7 @@ export default function PhoneItem({ user }) {
                             <input type="text" value={newData.phone} onChange={(e) => setNewData({ ...newData, phone: e.target.value })} />
                         </div>
                         <div className="btn-item">
-                            <button onClick={() => { UpdateData(user.id, { name: newData.name, phone: newData.phone }); setEdit(false) }}>
+                            <button onClick={() => { updateData(user.id, { name: newData.name, phone: newData.phone }); }}>
                                 <FontAwesomeIcon icon={faFloppyDisk} />
                             </button>
                             <button>
@@ -86,7 +86,7 @@ export default function PhoneItem({ user }) {
                             <button onClick={() => submit(user)}>
                                 <FontAwesomeIcon icon={faTrashCan} />
                             </button>
-                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>
