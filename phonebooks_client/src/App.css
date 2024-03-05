@@ -1,0 +1,230 @@
+.container {
+  margin: 10px 10px 0px 10px;
+}
+
+.header {
+  margin: 50px 50px 10px 50px;
+}
+
+.body {
+  margin: 0px 60px 60px 60px;
+}
+
+.container-form {
+  display: flex;
+  width: 100%;
+}
+
+.btnSortAsc {
+  border: 1px solid #AF820f;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #AF820f;
+}
+
+.btnSortDesc {
+  border: 1px solid #AF820f;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #AF820f;
+}
+
+.btnAdd {
+  border: 1px solid #AF820f;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #AF820f;
+}
+
+.container-form button {
+  padding: 10px
+}
+
+.container-form input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+}
+
+.input-form {
+  margin: 0px 5px 0px 5px;
+  border-radius: 3px;
+  border: 1px solid black;
+  width: 100%;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
+
+/* css for components phone list */
+.phonelist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* css for components phone item */
+
+.container-item {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  margin-left: 20px;
+}
+
+.container-item-content {
+  display: flex;
+  border: 1px solid rgb(90, 89, 89);
+  border-radius: 5px;
+  background-color: #CCCCCC;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+.btn-item-img a img {
+  margin: 5px 10px 2px 5px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #CCCCCC;
+}
+
+.btn-item button:first-child {
+  background-color: #CCCCCC;
+  border: 1px solid #CCCCCC;
+  margin-left: -5px;
+}
+
+.btn-item button:last-child {
+  background-color: #CCCCCC;
+  border: 1px solid #CCCCCC;
+  margin-left: -5px;
+}
+
+.edit-item-identity input {
+  width: 90%;
+  height: 27px;
+  border-radius: 3px;
+  margin-top: 10px;
+  border: 1px solid rgb(90, 89, 89);
+}
+
+.edit-item-identity input:last-of-type {
+  margin-top: 5px;
+}
+
+/* css for components Form Add */
+.header-add {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-form-add input:first-child {
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.container-form-add input:last-child {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.btn-form-add {
+  margin: -30px 50px 20px 50px;
+  display: flex;
+  text-align: center;
+}
+
+.btn-btnSave {
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #AF820F;
+  border: #AF820F;
+  color: white;
+}
+
+.btn-form-add a {
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #AF820F;
+  border: #AF820F;
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* css for components Form Add */
+
+.container-avatar {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 2px 5px 5px 5px;
+}
+
+.header-avatar {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #f2f2f2;
+  padding: 1px;
+}
+
+.body-avatar {
+  margin: 15px;
+}
+
+.img-avatar {
+  display: flex;
+}
+
+.img-avatar input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 10%;
+  width: 100%;
+}
+
+.preview {
+  margin-top: 20px;
+  display: flex;
+}
+
+.preview label {
+  margin-top: 10px;
+}
+
+.preview img {
+  margin-left: 15%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 30%;
+}
+
+.footer-avatar {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.footer-avatar button:first-child {
+  background-color: #006bff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+.footer-avatar button:last-child {
+  background-color: #FEC200;
+  border: 1px solid #FEC200;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
