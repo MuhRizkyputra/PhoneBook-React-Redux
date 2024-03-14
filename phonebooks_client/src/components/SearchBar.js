@@ -3,38 +3,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 
 
-
-const ButtonSortAsc = ({ sort, setSort , setPage}) => {
+function ButtonSortAsc ({sort , setSort}) {
     return (
         <button className='btnSortAsc' onClick={() => {
             setSort('desc')
-            setPage(1)
+           
         }}>
             <FontAwesomeIcon icon={faArrowDownZA} id='center' />
         </button>
     )
 }
 
-const ButtonSortDesc = ({ sort, setSort, setPage }) => {
+function ButtonSortDesc ({sort , setSort} ){
     return (
         <button className='btnSortDesc' onClick={() => {
-            setSort('asc') 
-            setPage(1)
+            setSort('asc')
         }}>
             <FontAwesomeIcon icon={faArrowUpZA} id='center' />
         </button>
     )
 }
 
-const ButtonAdd = () => {
-    return (
-        <button className='btnAdd'>
-            <FontAwesomeIcon icon={faUserPlus} />
-        </button>
-    )
-}
-
-export default function SearchBar({ sort, setSort, keyword, setKeyword, setPage }) {
+export default function SearchBar({ sort, setSort, keyword, setKeyword }) {
     const handelSearch = (event) => {
         const { value } = event.target
         setKeyword(value)
@@ -42,10 +32,14 @@ export default function SearchBar({ sort, setSort, keyword, setKeyword, setPage 
     return (
         <div className="container-seachbar">
             <div className="container-form">
-                {sort === 'asc' || sort.sort == 'asc' ? <ButtonSortAsc sort={sort} setSort={setSort} setPage={setPage}/> : <ButtonSortDesc sort={sort
-                } setSort={setSort} setPage={setPage}/>}
+                {sort === 'asc' || sort.sort === 'asc' ? <ButtonSortAsc sort={sort} setSort={setSort} /> : <ButtonSortDesc sort={sort
+                } setSort={setSort} />}
                 <input className="input-form" value={keyword} placeholder='search your name' onInput={handelSearch} />
-                <Link to='/add'> <ButtonAdd /> </Link>
+                <Link to='/add'>
+                    <button className='btnAdd'>
+                        <FontAwesomeIcon icon={faUserPlus} />
+                    </button>
+                </Link>
             </div>
         </div>
     )
