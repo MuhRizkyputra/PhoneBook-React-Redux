@@ -20,20 +20,20 @@ export default function PhoneItem({ user }) {
 
     const submit = (user) => {
         confirmAlert({
-            title: 'KONFIRMASI UNTUK HAPUS',
-            message: `Apakah anda yakin menghapus data ini '${user.name}'`,
+            title: `Konfirmasi`,
+            message: `Apakah anda yakin ingin menghapus data ${user.name} ?`,
             buttons: [
                 {
                     label: 'Ya',
                     onClick: () => dispatch(deletePhonebooks({ id: user.id }))
                 },
                 {
-                    label: 'Tidak',
+                    label: 'Tidak'
                 }
             ]
-        });
-    };
 
+        })
+    }
     if (edit) {
         return (
             <div className="container-item">
