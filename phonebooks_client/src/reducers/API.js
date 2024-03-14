@@ -35,7 +35,7 @@ export const addPhonebooks = createAsyncThunk(
 export const updatePhonebooks = createAsyncThunk(
     'contacts/updatePhonebooks',
     async ({ id, contact }) => {
-        const { data } = await req.get(`phonebooks/${id}`, contact);
+        const { data } = await req.put(`phonebooks/${id}`, contact);
         return data;
     }
 )
