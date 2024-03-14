@@ -1,8 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addPhonebooks, loadPhonebooks, updatePhonebooks } from "./API";
+import { addPhonebooks, deletePhonebooks, loadPhonebooks, updatePhonebooks } from "./API";
 
 const initialState = {
     phonebook: [],
+    page: 1,
+    pages:1,
+    limit:30,
+    total:31,
     status: 'idle',
     error: null
 };
@@ -46,7 +50,7 @@ const contactsSlice = createSlice({
                             id: action.payload.id,
                             name: action.payload.name,
                             phone: action.payload.phone
-                        }, ...state.phonebooks.filter(data => data.id !== action.payload.id)], status: 'succeeded'
+                        }, ...state.phonebook.filter(data => data.id !== action.payload.id)], status: 'succeeded'
                 }
                 return state
             })
@@ -58,7 +62,7 @@ const contactsSlice = createSlice({
                 state.status = 'loading';
             })
             .addCase(updatePhonebooks.fulfilled, (state, action) => {
-                state.phonebooks = state.phonebooks.map((item) => {
+                state.phonebook = state.phonebook.map((item) => {
                     if (item.id === action.payload.id) {
                         item.name = action.payload.name;
                         item.phone = action.payload.phone;
@@ -68,6 +72,19 @@ const contactsSlice = createSlice({
                         state.status= 'succeeded'
             })
             .addCase(updatePhonebooks.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error;
+            })
+            .addCase(deletePhonebooks.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(deletePhonebooks.fulfilled, (state, action) => {
+            state.phonebook = state.phonebook.filter(
+                (data) => data.id !== action.payload.id
+            );
+            state.status='succeeded'
+            })
+            .addCase(deletePhonebooks.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error;
             })
