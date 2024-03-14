@@ -23,7 +23,7 @@ export default function FormAdd() {
                     <input type="text" placeholder="add your phone" onChange={(e) => setUser({ ...user, phone: e.target.value })} required />
                 </div>
                 <div className="btn-form-add">
-                    <button type="submit"> Save </button>
+                    <button className="btn-btnSave" type="submit"> Save </button>
                     <Link to={'/'}>Cancel</Link>
                 </div>
 
