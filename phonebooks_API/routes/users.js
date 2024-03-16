@@ -8,7 +8,7 @@ const { Op } = require("sequelize")
 /* GET users listing. */
 router.get('/phonebooks', async function (req, res, next) {
   try {
-    const { page = 1, limit = 42, keyword = "", sort = 'ASC' } = req.query
+    const { page = 1, limit = 40, keyword = "", sort = 'ASC' } = req.query
 
     const { count, rows } = await User.findAndCountAll({
       where: {
@@ -59,6 +59,20 @@ router.put('/phonebooks/:id', async function (req, res) {
     res.status(500).json({ err: error.message })
   }
 });
+
+router.get('/phonebooks/:id', async (req, res) => {
+  try {
+    const id = req.params.id
+    const response = await User.findOne({
+      where: {
+        id
+      }
+    })
+    res.status(200).json(response)
+  } catch (error) {
+    res.status(500).json({ error })
+  }
+})
 
 router.put('/phonebooks/:id/avatar', async function (req, res) {
   const id = req.params.id
@@ -115,14 +129,23 @@ router.put('/phonebooks/:id/avatar', async function (req, res) {
 router.delete('/phonebooks/:id', async function (req, res) {
   try {
     const id = req.params.id
-    const updatepb = await User.destroy({
+    const user = await User.findOne({
       where: {
         id
       },
+    });
+
+  if (!user) {
+    return res.status(500).json({message: "user not found"})
+  }
+  await User.destroy({
+    where: {
+      id
+    },
       returning: true,
       plain: true
-    });
-    res.json(updatepb[1])
+  })
+    return res.status(201).json(user)
   } catch (error) {
     res.status(500).json({ err: error.message })
   }

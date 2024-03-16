@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addPhonebooks, deletePhonebooks, loadPhonebooks, updatePhonebooks } from "./API";
+import { addPhonebooks, deletePhonebooks, loadPhonebooks, updateAvatar, updatePhonebooks } from "./API";
 
 const initialState = {
     phonebook: [],
     page: 1,
     pages:1,
-    limit:30,
-    total:31,
+    limit:42,
+    total:43,
     status: 'idle',
     error: null
 };
@@ -19,8 +19,8 @@ const contactsSlice = createSlice({
             state.phonebooks = [];
             state.page = 1;
             state.pages = 1;
-            state.limit = 30;
-            state.total = 31;
+            state.limit = 40;
+            state.total = 41;
             state.status = 'idle';
             state.error = null;
         }
@@ -75,6 +75,24 @@ const contactsSlice = createSlice({
                 state.status = 'failed';
                 state.error = action.error;
             })
+            .addCase(updateAvatar.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(updateAvatar.fulfilled, (state, action) => {
+                state.phonebook = state.phonebook.map((item) => {
+                    if (item.id === action.payload.id) {
+                        item.avatar = action.payload.avatar;
+                        
+                    }
+                    return item;
+                })
+                        state.status= 'succeeded'
+            })
+            .addCase(updateAvatar.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error;
+            })
+    
             .addCase(deletePhonebooks.pending, (state) => {
                 state.status = 'loading';
             })

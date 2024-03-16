@@ -155,7 +155,7 @@
   text-decoration: none;
 }
 
-/* css for components Form Add */
+/* css for components Avatar*/
 
 .container-avatar {
   border: 1px solid #ddd;
@@ -214,11 +214,12 @@
 }
 
 .footer-avatar button:first-child {
-  background-color: #006bff;
-  border: 1px solid #ddd;
+  background-color: #006BFF;
+  border: 1px solid #006BFF;
   padding: 10px;
+  color: white;
+  margin-right: 5px;
   border-radius: 5px;
-  color: black;
 }
 
 .footer-avatar button:last-child {
@@ -227,4 +228,16 @@
   padding: 10px;
   border-radius: 5px;
   color: black;
+}
+.btn-img-content {
+  border: none;
+  overflow: hidden;
+  background-color: transparent;
+}
+.btn-img-content img {
+  margin: 5px 10px 2px 5px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #CCCCCC;
 }

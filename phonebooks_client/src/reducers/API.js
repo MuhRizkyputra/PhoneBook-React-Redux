@@ -45,7 +45,7 @@ export const updateAvatar = createAsyncThunk(
     async ({ id, formData }) => {
         const { data } = await req.put(`phonebooks/${id}/avatar`, formData, {
             headers: {
-                'Content-type': 'multipart/form-data'
+                'Content-Type': 'multipart/form-data'
             }
         });
         return data;
