@@ -5,8 +5,8 @@ const initialState = {
     phonebook: [],
     page: 1,
     pages:1,
-    limit:42,
-    total:43,
+    limit:60,
+    total:61,
     status: 'idle',
     error: null
 };
@@ -19,8 +19,8 @@ const contactsSlice = createSlice({
             state.phonebooks = [];
             state.page = 1;
             state.pages = 1;
-            state.limit = 40;
-            state.total = 41;
+            state.limit = 50;
+            state.total = 51;
             state.status = 'idle';
             state.error = null;
         }
