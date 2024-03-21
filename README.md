@@ -1,5 +1,9 @@
 # PhoneBook Web App
 
+# Introduction
+
+A web-based application designed to display name and phone number data. This application includes CRUD, Sort, and Scroll Pagination features.
+
 # Step 1 : How To Run API Web
 
 First, you must activate the API server in order to run the data you want to display. Because this is an important component for the data to appear, you can also see it my GitHub API link: https://github.com/MuhRizkyputra/PhoneBook-React-Redux. You can run the code as follows :
@@ -73,6 +77,20 @@ Here's a look at how to sort by contact name you can also replace from top or bo
 ## Video Preview : 
 
 [Screencast from 21-03-24 12:14:58.webm](https://github.com/MuhRizkyputra/PhoneBook-React-Redux/assets/146927082/d0f7e960-573a-48f9-a9d2-e94837dab186)
+
+# etc information
+
+## Front-End 
+
+React.js , Redux , HTML5 , CSS , JavaScript
+
+## Back-End  
+
+Node.js , Express.js , Sequelize ORM , PostgreSQL
+
+## Other Tools 
+
+Git , npm/yarn , VS Code , Postman
 
 
 
