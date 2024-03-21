@@ -29,17 +29,17 @@ The page will reload when you make changes
 
 ## Home Page
 
-![Screenshot from 2024-02-10 13-43-52](https://github.com/adifahmad/ReactreduxC35/assets/52273664/70f26c25-e001-42d8-844b-e0dd2de0943b)
+![Screenshot from 2024-02-10 13-43-52]
 
 Here's the initial view of the web phonebook, here you can edit, delete and also add avatars
 
 ## Add Page
 
-![Screenshot from 2024-02-13 18-27-22](https://github.com/adifahmad/ReactreduxC35/assets/52273664/bf09c449-1d24-4764-ab40-5d4c8b69ebfd)
+![Screenshot from 2024-02-13 18-27-22]
 
 Here's the Add Profile view where you can add a new user in the initial view
 
-![Screenshot from 2024-02-13 18-27-32](https://github.com/adifahmad/ReactreduxC35/assets/52273664/0c1649eb-428d-4169-aca2-27e3c939e365)
+![Screenshot from 2024-02-13 18-27-32]
 
 Then, this is the view after adding a new user
 
