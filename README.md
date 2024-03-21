@@ -48,9 +48,6 @@ Then, this is the view after adding a new user
 
 ## Avatar
 
-[Screenshot from 2024-03-21 11-53-38](https://github.com/MuhRizkyputra/PhoneBook-React-Redux/assets/146927082/b580bfd1-bb0a-4da8-b0ba-a79657e37d2e)
-
-
 Klik picture avatar and you can select the file here. ( Exp ; Liam)
 
 ![Screenshot from 2024-03-21 11-54-01](https://github.com/MuhRizkyputra/PhoneBook-React-Redux/assets/146927082/48c252ad-509c-4a40-94a2-4771e45f391a)
