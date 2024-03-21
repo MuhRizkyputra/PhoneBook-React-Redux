@@ -29,7 +29,8 @@ The page will reload when you make changes
 
 ## Home Page
 
-![Screenshot from 2024-02-10 13-43-52]
+![Screenshot from 2024-03-17 11-51-10](https://github.com/MuhRizkyputra/PhoneBook-React-Redux/assets/146927082/0ed560f9-65a2-4e93-8087-4ea8058773a1)
+
 
 Here's the initial view of the web phonebook, here you can edit, delete and also add avatars
 
